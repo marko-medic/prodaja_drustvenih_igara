@@ -1,5 +1,5 @@
-import Dugme from '@komponente/UI/Dugme';
 import React from 'react';
+import Dugme from '@komponente/UI/Dugme';
 
 function FormaZaPretraguIgre({ onSubmit }) {
   return (

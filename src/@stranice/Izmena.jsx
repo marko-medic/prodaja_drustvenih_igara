@@ -20,20 +20,13 @@ function Izmena() {
     e.preventDefault();
     const forma = e.target;
 
-    const zemljaPorekla = forma.zemljaPorekla.value;
-
-    if (zemljaPorekla === 'default') {
-      toast('Morate izabrati zemlju porekla', { type: 'error' });
-      return;
-    }
-
     const podaciZaIzmenu = {
       naziv: forma.naziv.value,
       minBrojIgraca: forma.minBrojIgraca.value,
       maxBrojIgraca: forma.maxBrojIgraca.value,
       cena: forma.cena.value,
       url: forma.url.value,
-      zemljaPorekla,
+      zemljaPorekla: forma.zemljaPorekla.value,
     };
 
     if (
@@ -44,6 +37,11 @@ function Izmena() {
         'Minimalni broj igraca mora biti manji ili jednak maksimalnom broju igraca',
         { type: 'error' }
       );
+      return;
+    }
+
+    if (podaciZaIzmenu.zemljaPorekla === 'default') {
+      toast('Morate izabrati zemlju porekla', { type: 'error' });
       return;
     }
 

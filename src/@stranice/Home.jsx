@@ -43,7 +43,7 @@ function Home() {
   if (isEmpty(listaDostupnihIgara)) {
     return (
       <>
-        <h1 className="text-2xl">
+        <h1 className="text-2xl mb-3">
           Trenutno nemamo {textPretrage ? 'trazene' : 'dostupne'} igre na sajtu
           :(
         </h1>
