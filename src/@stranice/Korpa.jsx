@@ -64,7 +64,7 @@ function Korpa() {
         <strong>{vratiUkupnuCenu(mapirajSumu(grupisanaLista))}</strong>
         <small>rsd</small>
       </p>
-      <Dugme onClick={potvrdiKupovinu} className="w-64">
+      <Dugme onClick={potvrdiKupovinu} className="w-64 mt-3">
         Potvrdi kupovinu
       </Dugme>
     </div>

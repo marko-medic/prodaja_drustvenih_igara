@@ -22,7 +22,7 @@ function ListaNarudzbina() {
     return (
       <>
         <h1 className="text-2xl">Nemate ni jednu kupljenu igru</h1>
-        <Dugme onClick={() => navigiranje('/')} className="w-64">
+        <Dugme onClick={() => navigiranje('/')} className="w-64 mt-3">
           Vrati se na pocetnu stranicu
         </Dugme>
       </>

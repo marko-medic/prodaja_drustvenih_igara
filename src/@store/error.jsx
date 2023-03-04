@@ -54,7 +54,7 @@ class ErrorKomponenta extends Component {
           <button
             onClick={this.oporavak}
             type="button"
-            className="w-52 cursor-pointer bg-orange-500 text-white mt-2 p-3 text-center"
+            className="w-52 cursor-pointer bg-orange-500 text-white mt-3 p-3 text-center"
           >
             Pocetna stranica
           </button>
