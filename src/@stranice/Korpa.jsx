@@ -46,7 +46,7 @@ function Korpa() {
     return (
       <>
         <h1 className="text-2xl">Korpa je prazna</h1>
-        <Dugme onClick={() => navigiranje('/')} className="w-64">
+        <Dugme onClick={() => navigiranje('/')} className="w-64 mt-3">
           Vratite se na pocetnu stranicu
         </Dugme>
       </>
