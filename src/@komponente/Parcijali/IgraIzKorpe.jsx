@@ -43,8 +43,10 @@ function IgraIzKorpe({
         url={url}
       />
       <div>
-        <Dugme onClick={povecajBroj}>+</Dugme>
-        <Dugme onClick={smanjiBroj} className="ml-3">
+        <Dugme onClick={povecajBroj} className="w-2/12">
+          +
+        </Dugme>
+        <Dugme onClick={smanjiBroj} className="w-2/12 ml-3">
           -
         </Dugme>
       </div>

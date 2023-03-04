@@ -54,14 +54,14 @@ function Home() {
 
   return (
     <div className="h-full w-full p-5">
-      <h1 className="text-2xl">Lista dostupnih igara:</h1>
-      <div className="flex justify-between">
+      <h1 className="text-2xl mb-3">Lista dostupnih igara:</h1>
+      <div className="flex justify-between flex-col sm:flex-row">
         <FormaZaPretraguIgre onSubmit={filtrirajRezultate} />
         <select
           name="sort"
           id="sort"
           defaultValue="default"
-          className="w-2/6 p-2 ml-2"
+          className="w-full p-2 ml-0 sm:w-2/6 sm:ml-2"
           onChange={setSort}
         >
           <option disabled value="default">
@@ -95,7 +95,7 @@ function Home() {
           {...igra}
         />
       ))}
-      <Dugme className="bg-green-600" onClick={window.print}>
+      <Dugme className="bg-green-700" onClick={window.print}>
         Stampa
       </Dugme>
     </div>

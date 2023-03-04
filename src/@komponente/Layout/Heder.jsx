@@ -41,7 +41,7 @@ function Heder() {
               lokacijaInfo.pathname === '/info' ? 'bg-slate-500' : ''
             } hover:bg-slate-500`}
           >
-            <Link className="block p-2" to="/info">
+            <Link className="block p-2 whitespace-nowrap" to="/info">
               O nama
             </Link>
           </li>

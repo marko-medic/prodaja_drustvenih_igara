@@ -62,7 +62,7 @@ function IgraIzPocetne({
       <div className="flex">
         <Dugme
           onClick={dodajUKorpu}
-          className="text-center bg-blue-400 mr-5 w-32"
+          className="text-center bg-blue-400 mr-5 w-2/12 min-w-[25%] sm:min-w-0"
           tip="button"
         >
           Dodaj u korpu
@@ -71,12 +71,16 @@ function IgraIzPocetne({
           <>
             <Dugme
               onClick={() => navigiranje(`izmeni-igru/${id}`)}
-              className="text-center mr-5 bg-orange-600"
+              className="text-center mr-5 bg-orange-600 w-2/12 min-w-[25%] sm:min-w-0"
               tip="button"
             >
               Izmeni
             </Dugme>
-            <Dugme onClick={obrisiIgru} className="text-center" tip="button">
+            <Dugme
+              onClick={obrisiIgru}
+              className="text-center w-2/12 min-w-[25%] sm:min-w-0"
+              tip="button"
+            >
               Obrisi
             </Dugme>
           </>
