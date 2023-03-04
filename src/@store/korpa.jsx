@@ -3,7 +3,9 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 
@@ -15,9 +17,9 @@ const KorpaContext = createContext({
 });
 
 export function KorpaProvider({ children }) {
-  const korpaStorage = new KorpaStorage();
+  const korpaStorage = useRef(new KorpaStorage());
   const [listaNarudzbina, setujListuNarudzbina] = useState(
-    korpaStorage.vratiKorpu() || []
+    korpaStorage.current.vratiKorpu() || []
   );
 
   const dodajNarudzbinu = useCallback(
@@ -51,6 +53,10 @@ export function KorpaProvider({ children }) {
     }),
     [listaNarudzbina, dodajNarudzbinu, obrisiNarudzbinu, ocistiSveNarudzbine]
   );
+
+  useEffect(() => {
+    korpaStorage.current.sacuvajKorpu(listaNarudzbina);
+  }, [korpaStorage, listaNarudzbina]);
 
   return (
     <KorpaContext.Provider value={vrednosti}>{children}</KorpaContext.Provider>
