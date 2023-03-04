@@ -9,7 +9,7 @@ function FormaZaPretraguIgre({ onSubmit }) {
         className="p-2 mr-2"
         placeholder="Pretraga po nazivu"
       />
-      <Dugme className="w-32" tip="submit">
+      <Dugme className="!w-32" tip="submit">
         Pretrazi
       </Dugme>
     </form>

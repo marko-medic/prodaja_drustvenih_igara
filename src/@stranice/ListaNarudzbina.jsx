@@ -22,7 +22,7 @@ function ListaNarudzbina() {
     return (
       <>
         <h1 className="text-2xl">Nemate ni jednu kupljenu igru</h1>
-        <Dugme onClick={() => navigiranje('/')} className="w-64 mt-3">
+        <Dugme onClick={() => navigiranje('/')} className="!w-64 mt-3">
           Vrati se na pocetnu stranicu
         </Dugme>
       </>
@@ -59,11 +59,7 @@ function ListaNarudzbina() {
           </p>
         </div>
       ))}
-      <Dugme
-        style={{ backgroundColor: 'green' }}
-        className="mt-3"
-        onClick={window.print}
-      >
+      <Dugme className="mt-3 !bg-green-500" onClick={window.print}>
         Stampa
       </Dugme>
     </div>
