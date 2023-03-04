@@ -1,9 +1,16 @@
 import React from 'react';
 
-function Dugme({ children, tip, onClick = () => {}, className = '' }) {
+function Dugme({
+  children,
+  tip,
+  onClick = () => {},
+  className = '',
+  style = {},
+}) {
   return (
     <button
-      className={`text-center cursor-pointer p-2 bg-orange-400 w-4/12 mt-3 text-white rounded ${className}`}
+      style={style}
+      className={`text-center cursor-pointer p-2 bg-orange-400 w-4/12 text-white rounded ${className}`}
       type={tip !== 'submit' ? 'button' : 'submit'}
       onClick={onClick}
     >

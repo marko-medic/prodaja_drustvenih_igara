@@ -121,7 +121,7 @@ function Izmena() {
             ))}
           </select>
         )}
-        <Dugme tip="submit" className="w-32">
+        <Dugme tip="submit" className="w-32 mt-3">
           Potvrdi izmenu
         </Dugme>
       </form>

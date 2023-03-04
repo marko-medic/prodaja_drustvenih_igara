@@ -62,7 +62,8 @@ function IgraIzPocetne({
       <div className="flex">
         <Dugme
           onClick={dodajUKorpu}
-          className="text-center bg-blue-400 mr-5 w-2/12 min-w-[25%] sm:min-w-0"
+          style={{ minWidth: '50px' }}
+          className="text-center mt-3 bg-blue-400 mr-5 w-3/12 sm:w-1/12 sm:min-w-0"
           tip="button"
         >
           Dodaj u korpu
@@ -70,15 +71,17 @@ function IgraIzPocetne({
         {ulogovaniKorisnik && (
           <>
             <Dugme
+              style={{ minWidth: '50px' }}
               onClick={() => navigiranje(`izmeni-igru/${id}`)}
-              className="text-center mr-5 bg-orange-600 w-2/12 min-w-[25%] sm:min-w-0"
+              className="text-center mt-3 mr-5 bg-orange-600 w-3/12 sm:w-1/12 sm:min-w-0"
               tip="button"
             >
               Izmeni
             </Dugme>
             <Dugme
+              style={{ minWidth: '50px' }}
               onClick={obrisiIgru}
-              className="text-center w-2/12 min-w-[25%] sm:min-w-0"
+              className="text-center mt-3 w-3/12 sm:w-1/12 sm:min-w-0"
               tip="button"
             >
               Obrisi

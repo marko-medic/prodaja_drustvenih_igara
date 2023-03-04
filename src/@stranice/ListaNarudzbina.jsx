@@ -59,7 +59,11 @@ function ListaNarudzbina() {
           </p>
         </div>
       ))}
-      <Dugme className="bg-green-600" onClick={window.print}>
+      <Dugme
+        style={{ backgroundColor: 'green' }}
+        className="mt-3"
+        onClick={window.print}
+      >
         Stampa
       </Dugme>
     </div>

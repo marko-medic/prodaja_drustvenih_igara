@@ -95,7 +95,11 @@ function Home() {
           {...igra}
         />
       ))}
-      <Dugme className="bg-green-700" onClick={window.print}>
+      <Dugme
+        style={{ backgroundColor: 'green' }}
+        className="mt-3"
+        onClick={window.print}
+      >
         Stampa
       </Dugme>
     </div>

@@ -58,7 +58,9 @@ function Login() {
         </label>
 
         <div className="ml-2">
-          <Dugme tip="submit">Login</Dugme>
+          <Dugme tip="submit" className="mt-3">
+            Login
+          </Dugme>
         </div>
       </form>
     </div>

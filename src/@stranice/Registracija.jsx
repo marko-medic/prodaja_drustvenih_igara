@@ -79,8 +79,8 @@ function Registracija() {
           />
         </label>
         <div className="ml-2">
-          <Dugme tip="submit" className="w-24 text-center">
-            Sacuvaj
+          <Dugme tip="submit" className="w-24 text-center mt-3">
+            Registracija
           </Dugme>
         </div>
       </form>

@@ -107,7 +107,7 @@ function Unos() {
           </select>
         )}
 
-        <Dugme className="w-32" tip="submit">
+        <Dugme className="w-32 mt-3" tip="submit">
           Potvrdi unos
         </Dugme>
       </form>
