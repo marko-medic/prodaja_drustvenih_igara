@@ -1,7 +1,7 @@
-import IgraIzPocetne from '@komponente/Parcijali/IgraIzPocetne';
-import Spiner from '@komponente/UI/Spiner';
 import React, { useState } from 'react';
 import { isEmpty } from 'lodash';
+import IgraIzPocetne from '@komponente/Parcijali/IgraIzPocetne';
+import Spiner from '@komponente/UI/Spiner';
 import { useDrustveneIgre } from '@hooks/DrustveneIgre';
 import FormaZaPretraguIgre from '@komponente/Parcijali/FormaZaPretraguIgre';
 import Dugme from '@komponente/UI/Dugme';

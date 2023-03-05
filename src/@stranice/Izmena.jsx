@@ -51,6 +51,9 @@ function Izmena() {
         idIgre,
         formatirajPodatkeZaBazu(podaciZaIzmenu)
       );
+      toast(`Uspesno ste izmenili igru "${podaciZaIzmenu.naziv}"`, {
+        type: 'success',
+      });
       navigiranje('/');
     } catch (greska) {
       toast(greska.message, { type: 'error' });
