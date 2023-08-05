@@ -4,7 +4,8 @@ import IgraIzPocetne from '@komponente/Parcijali/IgraIzPocetne';
 import Spiner from '@komponente/UI/Spiner';
 import { useDrustveneIgre } from '@hooks/DrustveneIgre';
 import FormaZaPretraguIgre from '@komponente/Parcijali/FormaZaPretraguIgre';
-import Dugme from '@komponente/UI/Dugme';
+import AnimacionaStranica from '@komponente/Layout/AnimacionaStranica';
+import DugmeZaStampu from '@komponente/UI/DugmeZaStampu';
 
 function Home() {
   const [textPretrage, setujTextPretrage] = useState('');
@@ -53,52 +54,53 @@ function Home() {
   }
 
   return (
-    <div className="h-full w-full p-5">
-      <h1 className="text-2xl mb-3">Lista dostupnih igara:</h1>
-      <div className="flex justify-between flex-col sm:flex-row">
-        <FormaZaPretraguIgre onSubmit={filtrirajRezultate} />
-        <select
-          name="sort"
-          id="sort"
-          defaultValue="default"
-          className="w-full p-2 ml-0 sm:w-2/6 sm:ml-2"
-          onChange={setSort}
-        >
-          <option disabled value="default">
-            Sortiraj
-          </option>
-          <option data-tip="asc" value="cena">
-            Cena (rastuce)
-          </option>
-          <option data-tip="desc" value="cena">
-            Cena (opadajuce)
-          </option>
-          <option data-tip="asc" value="minBrojIgraca">
-            Minimalni broj igraca (rastuce)
-          </option>
-          <option data-tip="desc" value="minBrojIgraca">
-            Minimalni broj igraca (opadajuce)
-          </option>
-          <option data-tip="asc" value="maxBrojIgraca">
-            Maksimalni broj igraca (rastuce)
-          </option>
-          <option data-tip="desc" value="maxBrojIgraca">
-            Maksimalni broj igraca (opadajuce)
-          </option>
-        </select>
+    <AnimacionaStranica>
+      <div className="h-full w-full p-5">
+        <h1 className="text-2xl mb-3">Lista dostupnih igara:</h1>
+        <div className="flex justify-between flex-col sm:flex-row">
+          <FormaZaPretraguIgre onSubmit={filtrirajRezultate} />
+          <select
+            name="sort"
+            id="sort"
+            defaultValue="default"
+            className="w-full p-2 ml-0 sm:w-2/6 sm:ml-2"
+            onChange={setSort}
+          >
+            <option disabled value="default">
+              Sortiraj
+            </option>
+            <option data-tip="asc" value="cena">
+              Cena (rastuce)
+            </option>
+            <option data-tip="desc" value="cena">
+              Cena (opadajuce)
+            </option>
+            <option data-tip="asc" value="minBrojIgraca">
+              Minimalni broj igraca (rastuce)
+            </option>
+            <option data-tip="desc" value="minBrojIgraca">
+              Minimalni broj igraca (opadajuce)
+            </option>
+            <option data-tip="asc" value="maxBrojIgraca">
+              Maksimalni broj igraca (rastuce)
+            </option>
+            <option data-tip="desc" value="maxBrojIgraca">
+              Maksimalni broj igraca (opadajuce)
+            </option>
+          </select>
+        </div>
+        <div className="printabilna-sekcija">
+          {listaDostupnihIgara.map((igra) => (
+            <IgraIzPocetne
+              key={igra.id}
+              osveziListuIgara={osveziListuIgara}
+              {...igra}
+            />
+          ))}
+        </div>
+        <DugmeZaStampu />
       </div>
-
-      {listaDostupnihIgara.map((igra) => (
-        <IgraIzPocetne
-          key={igra.id}
-          osveziListuIgara={osveziListuIgara}
-          {...igra}
-        />
-      ))}
-      <Dugme className="mt-3 !bg-green-600" onClick={window.print}>
-        Stampa
-      </Dugme>
-    </div>
+    </AnimacionaStranica>
   );
 }
 

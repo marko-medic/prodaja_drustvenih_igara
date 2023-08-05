@@ -8,6 +8,7 @@ import Spiner from '@komponente/UI/Spiner';
 import { toast } from 'react-toastify';
 import { useListaDrzava } from '@hooks/ListaDrzava';
 import { useDrustvenaIgra } from '@hooks/DrustveneIgre';
+import AnimacionaStranica from '@komponente/Layout/AnimacionaStranica';
 
 function Izmena() {
   const listaIgaraServis = useRef(new ListaIgaraServis());
@@ -65,7 +66,7 @@ function Izmena() {
   }
 
   return (
-    <div>
+    <AnimacionaStranica>
       <h1 className="text-2xl">Izmeni drustvenu igru:</h1>
       <form className="flex flex-col" onSubmit={izmeniPodatke}>
         <input
@@ -126,7 +127,7 @@ function Izmena() {
           Potvrdi izmenu
         </Dugme>
       </form>
-    </div>
+    </AnimacionaStranica>
   );
 }
 

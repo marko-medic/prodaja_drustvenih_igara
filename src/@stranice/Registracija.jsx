@@ -3,6 +3,7 @@ import { AutorizacijaStorage } from '@storage';
 import useAutorizacija from '@store/autorizacija';
 import Dugme from '@komponente/UI/Dugme';
 import { toast } from 'react-toastify';
+import AnimacionaStranica from '@komponente/Layout/AnimacionaStranica';
 
 function Registracija() {
   const autorizacijaStorage = useRef(new AutorizacijaStorage());
@@ -39,7 +40,7 @@ function Registracija() {
   };
 
   return (
-    <div>
+    <AnimacionaStranica>
       <h1 className="text-3xl mb-5">Registracija</h1>
       <form className="flex flex-col w-3/5" onSubmit={registrujKorisnika}>
         <label htmlFor="email">
@@ -84,7 +85,7 @@ function Registracija() {
           </Dugme>
         </div>
       </form>
-    </div>
+    </AnimacionaStranica>
   );
 }
 

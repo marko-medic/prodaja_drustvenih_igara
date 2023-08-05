@@ -28,7 +28,7 @@ function Heder() {
             </Link>
           </li>
           <li
-            className={`flex-1 m-1 cursor-pointer ${
+            className={`flex-1 m-1 cursor-pointer transition-colors ${
               lokacijaInfo.pathname === '/' ? 'bg-slate-500' : ''
             } hover:bg-slate-500`}
           >
@@ -37,7 +37,7 @@ function Heder() {
             </Link>
           </li>
           <li
-            className={`flex-1 m-1 cursor-pointer ${
+            className={`flex-1 m-1 cursor-pointer transition-colors ${
               lokacijaInfo.pathname === '/info' ? 'bg-slate-500' : ''
             } hover:bg-slate-500`}
           >
@@ -49,7 +49,7 @@ function Heder() {
           {!ulogovaniKorisnik ? (
             <>
               <li
-                className={`flex-1 m-1 cursor-pointer ${
+                className={`flex-1 m-1 cursor-pointer transition-colors ${
                   lokacijaInfo.pathname === '/registracija'
                     ? 'bg-slate-500'
                     : ''
@@ -60,7 +60,7 @@ function Heder() {
                 </Link>
               </li>
               <li
-                className={`flex-1 m-1 cursor-pointer ${
+                className={`flex-1 m-1 cursor-pointer transition-colors ${
                   lokacijaInfo.pathname === '/login' ? 'bg-slate-500' : ''
                 } hover:bg-slate-500`}
               >
@@ -72,7 +72,7 @@ function Heder() {
           ) : (
             <>
               <li
-                className={`flex-1 m-1 cursor-pointer ${
+                className={`flex-1 m-1 cursor-pointer transition-colors ${
                   lokacijaInfo.pathname === '/dodaj-igru' ? 'bg-slate-500' : ''
                 } hover:bg-slate-500`}
               >
@@ -82,7 +82,7 @@ function Heder() {
               </li>
 
               <li
-                className={`flex-1 m-1 cursor-pointer ${
+                className={`flex-1 m-1 cursor-pointer transition-colors ${
                   lokacijaInfo.pathname === '/narudzbine' ? 'bg-slate-500' : ''
                 } hover:bg-slate-500`}
               >
@@ -91,7 +91,7 @@ function Heder() {
                 </Link>
               </li>
 
-              <li className="flex-1 m-1 cursor-pointer hover:bg-slate-500">
+              <li className="flex-1 m-1 cursor-pointer transition-colors hover:bg-slate-500">
                 <button
                   onClick={izlogujKorisnika}
                   type="button"

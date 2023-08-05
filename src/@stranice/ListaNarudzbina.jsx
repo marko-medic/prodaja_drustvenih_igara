@@ -8,6 +8,8 @@ import Spiner from '@komponente/UI/Spiner';
 import useAutorizacija from '@store/autorizacija';
 import { vratiUkupnuCenu } from '@helperi';
 import { useListaNarudzbina } from '@hooks/ListaNaurdzbina';
+import AnimacionaStranica from '@komponente/Layout/AnimacionaStranica';
+import DugmeZaStampu from '@komponente/UI/DugmeZaStampu';
 
 function ListaNarudzbina() {
   const { ulogovaniKorisnik } = useAutorizacija();
@@ -30,39 +32,39 @@ function ListaNarudzbina() {
   }
 
   return (
-    <div>
-      <h1 className="text-3xl">Lista narudzbina:</h1>
-      {listaNarudzbina.map((narudzbina, index) => (
-        <div className="bg-orange-300 p-2 mt-3" key={uuid()}>
-          <p className="mt-2 ml-3">
-            Redni broj narudzbine: <strong>#{index + 1}</strong>
-          </p>
-          {narudzbina.map((podaciONarudzbini) => (
-            <React.Fragment key={uuid()}>
-              <DrustvenaIgra
-                {...podaciONarudzbini}
-                cena={
-                  Number(podaciONarudzbini.cena) / podaciONarudzbini.kolicina
-                }
-              />
-              <p>
-                Ukupna cena za igru: <strong>{podaciONarudzbini.cena}</strong>
-                <small>rsd</small>
-              </p>
-              <hr className="m-3" />
-            </React.Fragment>
-          ))}
-          <p>
-            Ukupna cena porudzbine:{' '}
-            <strong>{vratiUkupnuCenu(narudzbina)}</strong>
-            <small>rsd</small>
-          </p>
-        </div>
-      ))}
-      <Dugme className="mt-3 !bg-green-500" onClick={window.print}>
-        Stampa
-      </Dugme>
-    </div>
+    <AnimacionaStranica>
+      <div className="printabilna-sekcija">
+        <h1 className="text-3xl">Lista narudzbina:</h1>
+        {listaNarudzbina.map((narudzbina, index) => (
+          <div className="bg-orange-300 p-2 mt-3" key={uuid()}>
+            <p className="mt-2 ml-3">
+              Redni broj narudzbine: <strong>#{index + 1}</strong>
+            </p>
+            {narudzbina.map((podaciONarudzbini) => (
+              <React.Fragment key={uuid()}>
+                <DrustvenaIgra
+                  {...podaciONarudzbini}
+                  cena={
+                    Number(podaciONarudzbini.cena) / podaciONarudzbini.kolicina
+                  }
+                />
+                <p>
+                  Ukupna cena za igru: <strong>{podaciONarudzbini.cena}</strong>
+                  <small>rsd</small>
+                </p>
+                <hr className="m-3" />
+              </React.Fragment>
+            ))}
+            <p>
+              Ukupna cena porudzbine:{' '}
+              <strong>{vratiUkupnuCenu(narudzbina)}</strong>
+              <small>rsd</small>
+            </p>
+          </div>
+        ))}
+        <DugmeZaStampu />
+      </div>
+    </AnimacionaStranica>
   );
 }
 

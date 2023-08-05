@@ -1,9 +1,10 @@
 import React from 'react';
 import randomSlika from '@aseti/igra-1.jpeg';
+import AnimacionaStranica from '@komponente/Layout/AnimacionaStranica';
 
 function Info() {
   return (
-    <div>
+    <AnimacionaStranica>
       <h1 className="text-3xl mb-3">Dragi posetioci,</h1>
       <p className="mb-3">
         Dobrodošli na stranicu <strong>O nama!</strong> <br /> Mi smo tim
@@ -32,9 +33,9 @@ function Info() {
         kao što smo i mi!
       </p>
       <p>
-        <img className="m-auto" alt="igra" src={randomSlika} />
+        <img className="m-auto animate-pulse" alt="igra" src={randomSlika} />
       </p>
-    </div>
+    </AnimacionaStranica>
   );
 }
 

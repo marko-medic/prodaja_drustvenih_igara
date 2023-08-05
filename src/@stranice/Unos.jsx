@@ -4,6 +4,7 @@ import { formatirajPodatkeZaBazu } from '@remote';
 import Dugme from '@komponente/UI/Dugme';
 import { ListaIgaraServis } from '@servisi';
 import { useListaDrzava } from '@hooks/ListaDrzava';
+import AnimacionaStranica from '@komponente/Layout/AnimacionaStranica';
 
 function Unos() {
   const listaIgaraServis = useRef(new ListaIgaraServis());
@@ -49,7 +50,7 @@ function Unos() {
   };
 
   return (
-    <div>
+    <AnimacionaStranica>
       <h1 className="text-2xl">Unesi novu drustvenu igru:</h1>
       <form className="flex flex-col" onSubmit={unesiPodatke}>
         <input
@@ -110,7 +111,7 @@ function Unos() {
           Potvrdi unos
         </Dugme>
       </form>
-    </div>
+    </AnimacionaStranica>
   );
 }
 

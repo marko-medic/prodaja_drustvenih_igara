@@ -1,4 +1,5 @@
 import { grupisiNiz, mapirajSumu, vratiUkupnuCenu } from '@helperi';
+import AnimacionaStranica from '@komponente/Layout/AnimacionaStranica';
 import IgraIzKorpe from '@komponente/Parcijali/IgraIzKorpe';
 import Dugme from '@komponente/UI/Dugme';
 import { formatirajPodatkeZaBazu } from '@remote';
@@ -54,7 +55,7 @@ function Korpa() {
   }
 
   return (
-    <div>
+    <AnimacionaStranica>
       <h1 className="text-2xl">Vasa korpa:</h1>
       {grupisanaLista.map((igra) => (
         <IgraIzKorpe key={igra.id} {...igra} />
@@ -67,7 +68,7 @@ function Korpa() {
       <Dugme onClick={potvrdiKupovinu} className="!w-64 mt-3">
         Potvrdi kupovinu
       </Dugme>
-    </div>
+    </AnimacionaStranica>
   );
 }
 
